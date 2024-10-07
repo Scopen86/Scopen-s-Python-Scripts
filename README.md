@@ -1,1 +1,1 @@
-Python scripts for some botting use
+Python scripts
