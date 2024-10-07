@@ -86,8 +86,8 @@ def register(accountId, periodId, batchId, locationId, slotId, token):
 
 
 # Credentials
-email = "ytnguynquy@gmail.com"
-password = "Testy567"
+email = "burner account@gmail.com"
+password = "hmmmmmmmmmmmm"
 
 # Period ID for which you want to check the exam locations
 periodId = 35 #const 
@@ -133,8 +133,8 @@ while loopCondition:
                                 #if batch == 404:
                                 if (batch == 401 and ("Thanh H" in message or "Hà Nội" in message or "Ninh Bình" in message or "Vinh" in message)):
                                     
-                                    email = "quyalts@gmail.com"
-                                    password = "Testy567"
+                                    email = "real_account@gmail.com"
+                                    password = "password"
 
                                     #Get token
                                     tuple = get_token_and_accountId(email, password)
