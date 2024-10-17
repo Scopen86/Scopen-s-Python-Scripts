@@ -36,3 +36,7 @@ if 'questions' in data:
 else:
     print("The API response doesn't contain the expected 'questions' key.")
     print("API Response:", response.text)
+
+# Wait for user input before exiting
+input("\nPress Enter to exit...")
+
