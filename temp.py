@@ -1,10 +1,22 @@
-import pyqrcode
+import requests
+from bs4 import BeautifulSoup
 
-# Create a QR code instance
-qr = pyqrcode.create("Placeholder data")
+# URL of the main page containing the keyboard versions
+main_url = 'https://www.keychron.com/collections/all'
 
-# Print the QR code to the console
-print("\nQR Code:")
-print(qr.terminal(quiet_zone=1))
+# Fetch the main page content
+response = requests.get(main_url)
+soup = BeautifulSoup(response.content, 'html.parser')
 
-print("QR code displayed in the console.")
+# Find all the product links
+product_links = []
+for a_tag in soup.find_all('a', href=True):
+    if '/products/' in a_tag['href']:
+        product_links.append('https://www.keychron.com' + a_tag['href'])
+
+# Remove duplicates
+product_links = list(set(product_links))
+
+# Print all the product URLs
+for link in product_links:
+    print(link)
